@@ -1,4 +1,4 @@
-# Manual QA Testing Portfolio – E-commerce Authentication Module
+# Manual QA Testing Portfolio 
 
 ## Overview
 
