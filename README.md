@@ -1,4 +1,4 @@
-# Manual QA Testing Portfolio – E-commerce Authentication Module
+# Manual QA Testing Portfolio
 
 ## Overview
 
@@ -57,7 +57,5 @@ security risks.
 
 All findings are based on observed system behavior.
 No intrusive or destructive testing was performed.
-
----
 
 Created as part of a personal QA learning and portfolio project.
