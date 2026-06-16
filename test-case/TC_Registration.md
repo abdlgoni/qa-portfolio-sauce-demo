@@ -1,7 +1,5 @@
-**==> picture [744 x 48] intentionally omitted <==**
 
-**----- Start of picture text -----**<br>
-Project Name Sauce Demo<br>Created By Abdul Goni<br>Target Link https://sauce-demo.myshopify.com/<br>ID Module Priority Scenario Description Test Type Preconditions Test Step Test Data Expected to Result Actual Result Status NOTES<br>**----- End of picture text -----**<br>
+Project Name Sauce Demo<br>Created By Abdul Goni<br>Target Link https://sauce-demo.myshopify.com
 
 
 |**ID**|**Module**|**Priority**|**Scenario Description**|**Test Type**|**Preconditions**|**Test Step**|**Test Step**|**Test Data**|**Test Data**|**Expected to Result**|**Actual Result**|**Status**|**NOTES**|
