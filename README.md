@@ -25,6 +25,20 @@ security risks.
 - Penetration testing
 - Source code review
 
+## Repository Structure
+qa-portfolio-sauce-demo/
+├── test-cases/
+│   ├── TC_Registration.md
+│   └── TC_Login.md
+│
+├── ux-reports/
+│   ├── UX-001_Registration_Data_Retention.md
+│   └── UX-002_Login_Data_Retention.md
+│
+├── test-summary/
+│   └── Login_test_summary.md
+│
+└── README.md
 ## Test Artifacts
 
 ### Test Cases
