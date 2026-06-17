@@ -27,6 +27,7 @@ security risks.
 
 ## Repository Structure
 
+```
 qa-portfolio-sauce-demo/
 ├── test-case/
 │   ├── TC_Registration.md
@@ -40,6 +41,7 @@ qa-portfolio-sauce-demo/
 │   └── Login_test_summary.md
 │
 └── README.md
+```
 
 ## Test Artifacts
 
