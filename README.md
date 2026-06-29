@@ -1,79 +1,73 @@
-# Manual QA Testing Portfolio
+# Manual QA Testing Portfolio – Sauce Demo
 
-## Overview
+Manual QA testing untuk fitur Authentication (Registration & Login) pada
+[Sauce Demo](https://sauce-demo.myshopify.com), dilakukan tanpa PRD menggunakan
+industry best practices sebagai referensi.
 
-This repository contains my manual QA testing portfolio focused on
-authentication-related features (Registration & Login) of a public
-e-commerce demo website.
+---
 
-The purpose of this project is to demonstrate my QA mindset, test design
-approach, and ability to identify functional, usability, and basic
-security risks.
+## Temuan Utama
 
-## Scope
+### Functional Defects
 
-- Registration form testing
-- Login functionality testing
-- Validation behavior
-- Usability and UX observations
-- Basic security input validation (non-intrusive)
+**TC-REG-004** — Semua field di-clear setelah password validation error, termasuk
+First Name, Last Name, dan Email yang valid. Expected: hanya password field yang
+dikosongkan.
 
-## Out of Scope
+**TC-REG-007** — Inconsistency validasi antara First Name dan Last Name: First Name
+menerima 255 karakter, Last Name menolaknya dengan pesan "maximum is 255 characters".
+Batas aktual Last Name tidak terdokumentasi.
 
-- Automated testing
-- Load or stress testing
-- Penetration testing
-- Source code review
+### UX Improvement Reports
 
-## Repository Structure
+**UX-001** — Registration form melakukan global form reset saat validasi gagal,
+membuang 75% data yang sudah diisi user. Rekomendasi: retain semua non-sensitive
+field, clear hanya password.
+
+**UX-002** — Login form mengosongkan email field setelah failed attempt, berbeda
+dari standar industri (Gmail, Amazon, Facebook). Rekomendasi: retain email, clear
+password saja.
+
+### Observasi Teknis
+
+TC-LOG-006 dan TC-LOG-007 menunjukkan browser-level validation (HTML5) yang memblock
+submission sebelum request dikirim ke server, sehingga field tidak di-clear. TC-LOG-008
+menunjukkan server-side validation dengan perilaku berbeda — field di-clear setelah
+response diterima. Inconsistency ini didokumentasikan sebagai UX issue.
+
+---
+
+## Cakupan Testing
+
+| Modul | Jumlah TC | Pass | Fail |
+|---|---|---|---|
+| Registration | 10 | 8 | 2 |
+| Login | 8 | 7 | 1 |
+| **Total** | **18** | **15** | **3** |
+
+Tipe skenario: positive, negative, boundary, validation — tanpa PRD.
+
+---
+
+## Struktur Repository
 
 ```
-qa-portfolio-sauce-demo/
 ├── test-case/
-│   ├── TC_Registration.md
-│   └── TC_Login.md
-│
+│   ├── TC_Registration.md     # 10 test cases
+│   └── TC_Login.md            # 8 test cases
 ├── ux-reports/
 │   ├── UX-001_Registration_Data_Retention.md
 │   └── UX-002_Login_Data_Retention.md
-│
-├── test-summary/
-│   └── Login_test_summary.md
-│
-└── README.md
+└── test-summary/
+    └── Login_test_summary.md
 ```
 
-## Test Artifacts
+---
 
-### Test Cases
+## Pendekatan Testing
 
-- Registration test cases (positive & negative scenarios)
-- Login test cases including validation, usability, and session handling
+- Black-box testing tanpa akses source code
+- Pemisahan eksplisit antara functional defect dan UX observation
+- Dokumentasi perbedaan behavior antara browser-level dan server-side validation
 
-### Bug & Improvement Reports
-
-- Password strength validation improvement
-- Login email field retention usability issue
-
-### Test Summary
-
-- Login module summary including observations and improvement areas
-
-## Testing Approach
-
-- Requirement-agnostic testing (black-box)
-- Separation of functional validation and UX improvements
-- Industry best practices used as reference when no PRD is available
-
-## Environment
-
-- Website: Sauce Demo (Shopify-based demo site)
-- Browser: Chrome
-- OS: Windows 11
-
-## Notes
-
-All findings are based on observed system behavior.
-No intrusive or destructive testing was performed.
-
-Created as part of a personal QA learning and portfolio project.
+**Environment:** Chrome · Windows 11 · Sauce Demo (Shopify-based)
